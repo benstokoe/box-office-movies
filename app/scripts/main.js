@@ -28,10 +28,12 @@ require.config({
 
 require([
     'backbone',
-    'routes/router'
-], function (Backbone, Router) {
+    'routes/router',
+    'tomatoes',
+    'views/app'
+], function (Backbone, Router, Tomatoes, App) {
 
-    var App = Backbone.View.extend({
+    var Main = Backbone.View.extend({
 
         initialize: function() {
             this.router = new Router();
@@ -41,11 +43,11 @@ require([
 
         handleRoutes: function() {
             this.router.on('route:app', function() {
-                console.log('hey');
+                var app = new App();
             });
         }
 
     });
 
-    var app = new App();
+    var main = new Main();
 });
