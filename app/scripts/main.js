@@ -35,6 +35,8 @@ require([
 
     var Main = Backbone.View.extend({
 
+        el: '.container',
+
         initialize: function() {
             this.router = new Router();
             this.handleRoutes();
@@ -44,7 +46,10 @@ require([
         handleRoutes: function() {
             this.router.on('route:app', function() {
                 var app = new App();
-            });
+                app.render();
+
+                this.$el.html(app.el);
+            }, this);
         }
 
     });

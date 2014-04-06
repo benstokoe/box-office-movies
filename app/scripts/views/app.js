@@ -13,11 +13,17 @@ define([
         template: JST['app/scripts/templates/app.ejs'],
 
         initialize: function() {
+
+        },
+
+        render: function() {
+            var self = this;
             Tomatoes.getBoxOfficeMovies(function(data) {
                 _.each(data.movies, function(value) {
-                    console.log('value: ', value);
+                    self.$el.append(value.title + '<br>');
                 });
             });
+            return this;
         }
     });
 
