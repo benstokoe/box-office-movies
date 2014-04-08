@@ -5,11 +5,13 @@ define([
     'underscore',
     'backbone',
     'templates',
-    'tomatoes'
-], function ($, _, Backbone, JST, Tomatoes) {
+    'tomatoes',
+    'ui/movieGrid'
+], function ($, _, Backbone, JST, Tomatoes, MovieGrid) {
     'use strict';
 
     var AppView = Backbone.View.extend({
+
         template: JST['app/scripts/templates/app.ejs'],
 
         initialize: function() {
@@ -17,12 +19,15 @@ define([
         },
 
         render: function() {
-            var self = this;
+            var self = this,
+                movieGrid = null;
+
+            // is there a better way to do this?
             Tomatoes.getBoxOfficeMovies(function(data) {
-                _.each(data.movies, function(value) {
-                    self.$el.append(value.title + '<br>');
-                });
+                self.movieGrid = new MovieGrid(data);
+                self.$el.html(self.movieGrid.el);
             });
+
             return this;
         }
     });

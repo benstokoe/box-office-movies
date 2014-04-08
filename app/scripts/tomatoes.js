@@ -1,10 +1,7 @@
 'use strict';
 
 define([
-    'jquery',
-    'underscore',
-    'backbone'
-], function($, _, Backbone){
+], function(){
 
     var RottenTomatoes = {
         apikey: '7jyadrpxu7fpa8xmtzgfghfx',
@@ -16,8 +13,6 @@ define([
         },
 
         getBoxOfficeMovies: function(callback) {
-            var self = this;
-
             $.ajax({
                 url: 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=7jyadrpxu7fpa8xmtzgfghfx',
                 dataType: 'jsonp',
