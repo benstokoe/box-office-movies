@@ -48,7 +48,7 @@ require([
                 var app = new App();
                 app.render();
 
-                this.$el.html(app.el);
+                this.$el.append(app.el);
             }, this);
         }
 

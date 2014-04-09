@@ -13,6 +13,7 @@ define([
     var AppView = Backbone.View.extend({
 
         template: JST['app/scripts/templates/app.ejs'],
+        className: 'movie-grid',
 
         initialize: function() {
 

@@ -10,7 +10,6 @@ define([
 
     var MovieGrid = Backbone.View.extend({
         tagName: 'ul',
-        className: 'movie-grid',
 
         initialize: function(data){
             this.data = data;
@@ -28,8 +27,9 @@ define([
             _.each(movies, function(movie){
 
                 var li = new Movie({
-                        title: movie.title
-                    });
+                    image: movie.posters.detailed,
+                    title: movie.title
+                });
 
                 self.$el.append(li.el);
             });

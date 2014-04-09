@@ -16,6 +16,7 @@ define([
         },
 
         initialize: function(options){
+            this.image = options.image;
             this.title = options.title;
             this.render();
         },
@@ -24,6 +25,7 @@ define([
         render: function() {
 
             var template = this.template({
+                image: this.image,
                 title: this.title
             });
 
