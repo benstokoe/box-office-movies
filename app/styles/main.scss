@@ -27,7 +27,7 @@ body, h1, h2, h3, h4 {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 960px;
+        max-width: 847px; // perfect width for movie grid
     }
 }
 
@@ -44,15 +44,23 @@ ul {
         padding: 0;
     }
 
-    .title {
-        background-color: #2c3e50;
-        color: #fff;
+    .movie-info {
+        background-color: #34495e;
+        max-width: $movie_width;
         padding: 10px;
+        color: #fff;
+
+        .rating {
+            font-size: 12px;
+            display: block;
+        }
+    }
+    .title {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         margin: 0;
-        max-width: $movie_width;
+        font-weight: bold;
     }
 
 

@@ -18,6 +18,9 @@ define([
         initialize: function(options){
             this.image = options.image;
             this.title = options.title;
+            this.criticsScore = options.criticsScore;
+            this.audienceScore = options.audienceScore;
+            this.link = options.link;
             this.render();
         },
 
@@ -26,7 +29,10 @@ define([
 
             var template = this.template({
                 image: this.image,
-                title: this.title
+                title: this.title,
+                criticsScore: this.criticsScore,
+                audienceScore: this.audienceScore,
+                link: this.link
             });
 
             this.$el.html(template);

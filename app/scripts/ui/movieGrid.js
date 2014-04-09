@@ -28,7 +28,10 @@ define([
 
                 var li = new Movie({
                     image: movie.posters.detailed,
-                    title: movie.title
+                    title: movie.title,
+                    criticsScore: movie.ratings.critics_score,
+                    audienceScore: movie.ratings.audience_score,
+                    link: movie.links.alternate
                 });
 
                 self.$el.append(li.el);
